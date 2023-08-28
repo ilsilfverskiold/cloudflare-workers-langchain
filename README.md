@@ -8,7 +8,7 @@ Cloudflare Workers will be free for the first 100,000 requests per day. The only
 
 - Node.js: Make sure you have Node.js 18x installed. You can download it from [here](https://nodejs.org/).
 - OpenAI API Key: Make sure you go get your API key at platform.openai.com.
-- Cloudflare Account: You'll need to authenticate yourself via Wrangler.
+- Cloudflare Account: You'll need a free Cloudflare account for this to work. Sign up [here](https://workers.cloudflare.com/).
 - Wrangler: This project uses Cloudflare's Wrangler tool to deploy the worker. If you haven't installed it yet, you can do so using npm:
 
   ```bash
