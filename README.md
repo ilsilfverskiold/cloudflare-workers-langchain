@@ -2,7 +2,7 @@
 
 This repository contains a Cloudflare Worker script that builds an HTTP POST endpoint that will answer questions with a URL using LangchainJS, Cheerio and OpenAI. 
 
-Cloudflare Workers will be free for the first 100,000 requests per day. The only thing you'll pay for is your OpenAI tokens. See OpenAI pricing [here.](https://openai.com/pricing). Using the example URL in the script, for every request we'll use about 3,776 tokens for text-embedding-ada-002 and 1,337 tokens for the GPT-3.5 Turbo model. Ada v2 is set at $0.0001 / 1K tokens and GPT-3.5 Turbo is set at $0.0015 / 1K tokens.
+Cloudflare Workers will be free for the first 100,000 requests per day. The only thing you'll pay for is your OpenAI tokens. See OpenAI pricing [here](https://openai.com/pricing). Using the example URL in the script, for every request we'll use about 3,776 tokens for text-embedding-ada-002 and 1,337 tokens for the GPT-3.5 Turbo model. Ada v2 is set at $0.0001 / 1K tokens and GPT-3.5 Turbo is set at $0.0015 / 1K tokens.
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ Follow the prompts to enter the values for each secret. If you are having issues
      -H "Authorization: SECRET_TOKEN" \
      -d '{"question": "", "history": ""}'
 
-     Remember to set the question to something related to your text or it will have issues answering
+Remember to set the question to something related to your text or it will have issues answering
 
 ## Notes
 
