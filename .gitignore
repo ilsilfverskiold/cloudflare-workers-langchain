@@ -1,0 +1,21 @@
+# Node related
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment secrets
+.env
+
+# Build artifacts
+/dist
+/build
+
+# Logs
+*.log
+
+# IDE-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
