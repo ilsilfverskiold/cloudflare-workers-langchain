@@ -1,4 +1,4 @@
-# Cloudflare Worker Project
+# Cloudflare Langchain Worker
 
 This repository contains a Cloudflare Worker script that builds an HTTP POST endpoint that will answer questions with a URL using LangchainJS, Cheerio and OpenAI. 
 
