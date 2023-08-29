@@ -15,11 +15,10 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAI } from "langchain/llms/openai";
 import { ConversationalRetrievalQAChain } from "langchain/chains";
 
-const allowedIPs = ["188.151.147.87"]; // Set allowed IPs here
+// (!) Set the allowed IPs here
+const allowedIPs = [""];
 
-// Helper function to set CORS headers
 function handleCORS(response) {
-  // set allowed origin
   response.headers.set("Access-Control-Allow-Origin", "http://localhost:3000");
   response.headers.set(
     "Access-Control-Allow-Methods",
@@ -35,11 +34,11 @@ function handleCORS(response) {
 export default {
   async fetch(request, env) {
     try {
-	// First, handle the preflight OPTIONS request
-    if (request.method === "OPTIONS") {
+      // First, handle the preflight OPTIONS request
+      if (request.method === "OPTIONS") {
         let response = new Response(null, { status: 204 }); // No content response for OPTIONS
         return handleCORS(response);
-    }
+      }
 
       if (request.method !== "POST") {
         return new Response("Method Not Allowed", { status: 405 });
@@ -63,7 +62,7 @@ export default {
         return new Response("Unauthorized", { status: 403 });
       }
 
-      // Set the template for the prompt
+      // (!) Set the template for the prompt
       const promptTemplate = `
 		Help the user code directly with the information you get. 
 		You should be able to help the user understand how to use it in their own javascript code.
@@ -75,6 +74,7 @@ export default {
       const prompt = promptTemplate.replace("{question}", question);
 
       // Load, split, transform, and embed the document
+	  // (!) Set your own url here
       const loader = new CheerioWebBaseLoader(
         "https://js.langchain.com/docs/guides/expression_language/cookbook"
       );
@@ -108,9 +108,9 @@ export default {
         chat_history: history,
       });
 
-     // Return the response with CORS headers
-    let response = new Response(res.text);
-    return handleCORS(response);
+      // Return the response with CORS headers
+      let response = new Response(res.text);
+      return handleCORS(response);
     } catch (error) {
       // Log the error for debugging
       console.error(error);
