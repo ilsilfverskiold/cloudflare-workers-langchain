@@ -50,6 +50,11 @@ Follow the prompts to enter the values for each secret. If you are having issues
 6. **Customize the Worker Script**:
 
 - Open src/worker.js in your preferred text editor.
+- Set the allowed IPs (that can interact with your finished endpoint):
+
+    ```javascript
+    const allowedIPs = [""]; // Set allowed IPs here
+
 - Modify the URL you want the worker to interact with:
 
     ```javascript
