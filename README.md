@@ -42,8 +42,8 @@ Follow the prompts to authenticate.
 5. **Set Up Secrets**: Use Wrangler to create the necessary secrets (you'll access these via the env parameter)
 
     ```bash
-    wrangler secret put OPENAI_API_KEY
-    wrangler secret put SECRET_TOKEN
+    wrangler --name langchain-worker secret put OPENAI_API_KEY
+    wrangler --name langchain-worker secret put SECRET_TOKEN
 
 Follow the prompts to enter the values for each secret. If you are having issues after deployment go to your Worker in the Cloudflare dashboard and see Settings --> Variables. Set your env variables here and make sure to encrypt them before you deploy.
 
