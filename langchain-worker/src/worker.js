@@ -40,7 +40,7 @@ export default {
         let response = new Response(null, { status: 204 }); // No content response for OPTIONS
         return handleCORS(response);
     }
-	
+
       if (request.method !== "POST") {
         return new Response("Method Not Allowed", { status: 405 });
       }
@@ -65,7 +65,9 @@ export default {
 
       // Set the template for the prompt
       const promptTemplate = `
-		Help the user code directly with the information you get. You should be able to help the user understand how to use it in their own javascript code.
+		Help the user code directly with the information you get. 
+		You should be able to help the user understand how to use it in their own javascript code.
+		You can obviously add more information if needed to make it coherent for the user.
 		Question: {question}. Answer:
 		`;
 
