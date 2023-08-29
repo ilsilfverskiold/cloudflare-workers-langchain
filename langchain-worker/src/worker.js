@@ -44,7 +44,7 @@ export default {
         return new Response("Method Not Allowed", { status: 405 });
       }
 
-      // Check for allowed IP
+      // Check for allowed IP - remove if not needed
       if (!allowedIPs.includes(request.headers.get("cf-connecting-ip"))) {
         let response = new Response("Unauthorized", { status: 403 });
         return handleCORS(response); // Apply CORS headers
